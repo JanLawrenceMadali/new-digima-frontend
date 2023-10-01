@@ -1,0 +1,53 @@
+<mat-drawer-container class="h-full" autosize>
+    <mat-drawer #drawer class="example-sidenav" opened mode="side">
+        <div class="p-6">
+            <img *ngIf="showSideNav" class="h-14 w-auto" src=".././assets/img/digima-logo.png" alt="digima-logo">
+            <img *ngIf="!showSideNav" class="h-14 w-auto" src=".././assets/img/digima-icon.png" alt="digima-icon">
+        </div>
+        <ul class="p-10 space-y-4">
+            <li class="flex items-center gap-3">
+                <mat-icon>home</mat-icon>
+                <span *ngIf="showSideNav">Dashboard</span>
+            </li>
+            <li class="flex items-center gap-3">
+                <mat-icon>bar_chart</mat-icon>
+                <span *ngIf="showSideNav">Profit Summary</span>
+            </li>
+            <li class="flex items-center gap-3">
+                <mat-icon>money</mat-icon>
+                <span *ngIf="showSideNav">CashIn</span>
+            </li>
+            <li class="flex items-center gap-3">
+                <mat-icon>lock</mat-icon>
+                <span *ngIf="showSideNav">Codevault</span>
+            </li>
+            <li class="flex items-center gap-3">
+                <mat-icon>people</mat-icon>
+                <span *ngIf="showSideNav">Genealogy</span>
+            </li>
+            <li class="flex items-center gap-3">
+                <mat-icon>person_add</mat-icon>
+                <span *ngIf="showSideNav">Referrals</span>
+            </li>
+            <li class="flex items-center gap-3">
+                <mat-icon>shop</mat-icon>
+                <span *ngIf="showSideNav">Shop</span>
+            </li>
+            <li class="flex items-center gap-3">
+                <mat-icon>shopping_basket</mat-icon>
+                <span *ngIf="showSideNav">My Order</span>
+            </li>
+            <li class="flex items-center gap-3 bg-red-500 rounded p-2 text-white">
+                <mat-icon>logout</mat-icon>
+                <span *ngIf="showSideNav">Logout</span>
+            </li>
+        </ul>
+    </mat-drawer>
+
+    <div class="p-2 w-full bg-blue-700 text-white">
+        <button mat-icon-button (click)="toggleSideNav()" class="flex items-center gap-2 p-2 uppercase text-lg">
+            <mat-icon class="{{showSideNav ? 'transition transform rotate-0' : 'transition transform rotate-180' }}">keyboard_arrow_right</mat-icon>
+            <span>Dashboard</span>
+        </button>
+    </div>
+</mat-drawer-container>
